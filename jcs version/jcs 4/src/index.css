@@ -1,0 +1,112 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Design system with cosmic theme */
+@layer base {
+  :root {
+    --background: 220 27% 6%;
+    --foreground: 300 20% 99%;
+
+    --card: 220 27% 8%;
+    --card-foreground: 300 20% 99%;
+
+    --popover: 220 27% 8%;
+    --popover-foreground: 300 20% 99%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 300 20% 99%;
+
+    --secondary: 220 27% 12%;
+    --secondary-foreground: 300 20% 99%;
+
+    --muted: 220 27% 12%;
+    --muted-foreground: 300 5% 65%;
+
+    --accent: 316 78% 58%;
+    --accent-foreground: 300 20% 99%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 27% 16%;
+    --input: 220 27% 16%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+    background-image: url('/lovable-uploads/46659b77-4e25-4b99-806c-4b23fc3c3854.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+}
+
+/* Animated stars */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(15, 15, 23, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+/* Neon glow effects */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.8);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 15, 23, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.7);
+}
